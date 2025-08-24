@@ -1,0 +1,20 @@
+{
+  "name": "donations-app",
+  "version": "1.0.0",
+  "description": "A donations web app for NGOs and donors",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jade": "^1.11.0",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

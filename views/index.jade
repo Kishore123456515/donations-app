@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .jumbotron.bg-light.p-5.rounded
+    h1.display-4 Make a Difference
+    p.lead Support causes that matter to you. Join our community of donors and NGOs working together to create positive change.
+    a.btn.btn-primary.btn-lg(href='/causes', role='button') Browse Causes
+
+  .row.mt-5
+    .col-md-12
+      h2.mb-4 Featured Causes
+      if causes.length > 0
+        .row
+          each cause in causes.slice(0, 3)
+            .col-md-4.mb-4
+              .card
+                img.card-img-top(src=cause.imageUrl, alt=cause.title, style='height: 200px; object-fit: cover;')
+                .card-body
+                  h5.card-title= cause.title
+                  p.card-text= cause.description.substring(0, 100) + '...'
+                  .progress.mb-3
+                    .progress-bar(role='progressbar', style=`width: ${(cause.currentAmount / cause.targetAmount) * 100}%`)
+                  p.card-text
+                    strong $#{cause.currentAmount} raised of $#{cause.targetAmount}
+                  a.btn.btn-primary(href=`/causes/${cause.id}`) View Details
+      else
+        p.text-center No causes available yet.
