@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .container
+    .alert.alert-danger
+      h4= message
+      p= error.status
+      if error.stack && env === 'development'
+        pre #{error.stack}
