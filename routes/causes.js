@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('my-donations', { 
-    title: 'My Donations',
-    donations: []
+  res.render('causes', { 
+    title: 'All Causes',
+    causes: global.causes || []
   });
 });
 
